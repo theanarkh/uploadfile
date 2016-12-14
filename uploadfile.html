@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+    <script src="jquery-2.2.3-unzip.js"></script>
+<body>
+<button id="btn" type="button">uploadfile</button>
+<button id="btn1" type="button">uploadfile</button>
+<script type="text/javascript" src="uploadfile.js"></script>
+<script type="text/javascript">
+	new uploadfile({
+		element: '#btn',
+		//fileSize: 1*1024,
+		types: ' jpg,png ,zip',
+		multiple:"multiple",
+		addition: {
+			csrfCode: Math.random()
+		},
+		success: function(data){
+			console.log(data)
+		},
+		fail: function(data){
+			console.log(data)
+		},
+		loading: function(data){
+			console.log(data)
+		}
+	})
+
+	new uploadfile({
+		element: '#btn1',
+		//fileSize: 1*1024,
+		types: ' jpg,png ',
+		multiple:"multiple",
+		success: function(data){
+			console.log(data)
+		},
+		fail: function(data){
+			console.log(data)
+		},
+		loading: function(data){
+			console.log(data)
+		},
+		fileIdPrefix: 'cyb'
+	})
+</script>
+</body>
+</html>
